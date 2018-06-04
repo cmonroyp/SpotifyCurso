@@ -1,0 +1,22 @@
+<!-- <div class="card-columns">
+    <div class="card" *ngFor="let cancion of nuevasCanciones">
+        <img class="card-img-top" [src]="cancion.images | noimage" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{cancion.name}}</h5>
+            <p class="card-text">
+                <span *ngFor="let artist of cancion.artists" class="badge badge-pill badge-warning">{{artist.name}}</span>
+            </p>
+        </div>
+    </div>
+</div> -->
+
+<app-loading *ngIf="loading"></app-loading>
+
+<div *ngIf="messageError" class="alert alert-danger animated fadeIn">
+    <h3>Error</h3>
+    <p>
+        {{messageError}}
+    </p>
+</div>
+
+<app-tarjetas [items]="nuevasCanciones"></app-tarjetas>
